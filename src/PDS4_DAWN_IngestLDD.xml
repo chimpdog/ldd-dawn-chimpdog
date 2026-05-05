@@ -30,6 +30,27 @@
 
 
 	<DD_Attribute>
+		<name>local_hour_angle</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.local_hour_angle</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The local_hour_angle attribute provides a measure of the 
+			instantaneous apparent Sun position at the center of the 
+			image or spectra. It is the angle between the extension 
+			of the vector from the Sun to the target body and the 
+			vector projection on the target body's reference plane 
+			of a vector from the target body's planetocentric center 
+			to the observer, usually the spacecraft.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
 		<name>mission_phase_name</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.mission_phase_name</local_identifier>
@@ -1895,20 +1916,6 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
-		<name>local_hour_angle</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.local_hour_angle</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The local_hour_angle attribute indicates the local hour at the center of the 
-			image or spectra.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
 		<name>scan_mode_id</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.scan_mode_id</local_identifier>
@@ -2974,7 +2981,10 @@
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.Dawn_Telemetry</local_identifier>
 		<submitter_name>C. Juarez</submitter_name>
-		<definition>The Dawn_Telemetry class contains telemetry-related metadata used by Dawn instrument data products.</definition>
+		<definition>
+			The Dawn_Telemetry class contains telemetry-related 
+			metadata used by Dawn instrument data products.
+		</definition>
 		<element_flag>false</element_flag>
 		<DD_Association>
 			<identifier_reference>dawn.telemetry_format_id</identifier_reference>
@@ -2995,7 +3005,11 @@
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.Dawn_Object_Orientation</local_identifier>
 		<submitter_name>C. Juarez</submitter_name>
-		<definition>The Dawn_Object_Orientation class contains Dawn-specific attributes that describe the pointing orientation of an image, spectrum, or scan platform relative to celestial coordinates.</definition>
+		<definition>
+			The Dawn_Object_Orientation class contains Dawn-specific 
+			attributes that describe the pointing orientation of an image, 
+			spectrum, or scan platform relative to celestial coordinates.
+		</definition>
 		<element_flag>false</element_flag>
 		<DD_Association>
 			<identifier_reference>dawn.twist_angle</identifier_reference>
@@ -3010,10 +3024,32 @@
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.Dawn_Image_Parameters</local_identifier>
 		<submitter_name>C. Juarez</submitter_name>
-		<definition>The Dawn_Image_Parameters class contains Dawn image geometry parameters used in Dawn PDS3 labels.</definition>
+		<definition>
+			The Dawn_Image_Parameters class contains Dawn image geometry 
+			parameters used in Dawn PDS3 labels.
+		</definition>
 		<element_flag>false</element_flag>
 		<DD_Association>
 			<identifier_reference>dawn.north_azimuth</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>Dawn_Orbit_Geometry</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.Dawn_Orbit_Geometry</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The Dawn_Orbit_Geometry class contains Dawn-specific geometry 
+			attributes describing the spacecraft, target, and solar viewing 
+			geometry for an observation.
+		</definition>
+		<element_flag>false</element_flag>
+		<DD_Association>
+			<identifier_reference>dawn.local_hour_angle</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -3072,6 +3108,13 @@
 		
 		<DD_Association>
 			<identifier_reference>dawn.Dawn_Image_Parameters</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>dawn.Dawn_Orbit_Geometry</identifier_reference>
 			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
