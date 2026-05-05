@@ -1084,60 +1084,6 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
-		<name>telemetry_format_id</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.telemetry_format_id</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>C. Juarez</submitter_name>
-		<definition>Provides the version of the UDP library which is 
-			loaded into the instrument’s NVRAM.
-			302 = UDP library v. 3.02
-			303 = UDP library v. 3.03
-			304 = UDP library v. 3.04
-			305 = UDP library v. 3.05
-			Example values: “302”, "303", “304”, “305”</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>true</enumeration_flag>
-			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-			<DD_Permissible_Value>
-				<value>301</value>
-				<value_meaning>UDP library v. 3.01</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>302</value>
-				<value_meaning>UDP library v. 3.02</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>303</value>
-				<value_meaning>UDP library v. 3.03</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>304</value>
-				<value_meaning>UDP library v. 3.04</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>305</value>
-				<value_meaning>UDP library v. 3.05</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>306</value>
-				<value_meaning>UDP library v. 3.06</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>307</value>
-				<value_meaning>UDP library v. 3.07</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>308</value>
-				<value_meaning>UDP library v. 3.08</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>309</value>
-				<value_meaning>UDP library v. 3.09</value_meaning>
-			</DD_Permissible_Value>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
 		<name>test_lamp</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.test_lamp</local_identifier>
@@ -2943,6 +2889,42 @@
 		</DD_Association>
 	  </DD_Class>
 
+	<DD_Class>
+		<name>Dawn_Telemetry</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.Dawn_Telemetry</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>The Dawn_Telemetry class contains telemetry-related metadata used by Dawn instrument data products.</definition>
+		<element_flag>false</element_flag>
+		<DD_Association>
+			<identifier_reference>dawn.telemetry_format_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.telemetry_source_name</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>Dawn_Object_Orientation</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.Dawn_Object_Orientation</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>The Dawn_Object_Orientation class contains Dawn-specific attributes that describe the pointing orientation of an image, spectrum, or scan platform relative to celestial coordinates.</definition>
+		<element_flag>false</element_flag>
+		
+		<DD_Association>
+			<identifier_reference>dawn.twist_angle</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
 
 	<DD_Class>
 		<name>Dawn</name>
@@ -2976,6 +2958,20 @@
 		<DD_Association>
 			<identifier_reference>dawn.standard_data_product_id</identifier_reference>
 			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>dawn.Dawn_Telemetry</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>dawn.Dawn_Object_Orientation</identifier_reference>
+			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
