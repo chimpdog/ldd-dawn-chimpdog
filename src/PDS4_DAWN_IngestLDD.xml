@@ -1133,7 +1133,7 @@
 			Uniquely identifies a scientific observation within a 
 			data set. Mostly important for multi-instrument 
 			observation campaigns. The OBSERVATION_ID 
-			comes from DSC.
+			comes from the Dawn Science Center (DSC).
 		</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
