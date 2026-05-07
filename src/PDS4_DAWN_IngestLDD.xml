@@ -30,6 +30,27 @@
 
 
 	<DD_Attribute>
+		<name>local_hour_angle</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.local_hour_angle</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The local_hour_angle attribute provides a measure of the 
+			instantaneous apparent Sun position at the center of the 
+			image or spectra. It is the angle between the extension 
+			of the vector from the Sun to the target body and the 
+			vector projection on the target body's reference plane 
+			of a vector from the target body's planetocentric center 
+			to the observer, usually the spacecraft.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
 		<name>mission_phase_name</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.mission_phase_name</local_identifier>
@@ -216,6 +237,19 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
+		<name>north_azimuth</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.north_azimuth</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>The north_azimuth attribute provides the value of the north azimuth angle evaluated at the center of the image or spectra. For image products, this is the angle between the line from the image center to the north pole and a horizontal reference line in the image plane extending from the image center to the middle right edge of the image. This angle increases in a clockwise direction.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
 		<name>spacecraft_clock_start_count</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.spacecraft_clock_start_count</local_identifier>
@@ -262,7 +296,88 @@
 			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 		</DD_Value_Domain>
-	</DD_Attribute>     
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>telemetry_format_id</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.telemetry_format_id</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>Provides the version of the UDP library which is 
+			loaded into the instrument’s NVRAM.
+			302 = UDP library v. 3.02
+			303 = UDP library v. 3.03
+			304 = UDP library v. 3.04
+			305 = UDP library v. 3.05
+			Example values: “302”, "303", “304”, “305”</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+			<DD_Permissible_Value>
+				<value>301</value>
+				<value_meaning>UDP library v. 3.01</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>302</value>
+				<value_meaning>UDP library v. 3.02</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>303</value>
+				<value_meaning>UDP library v. 3.03</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>304</value>
+				<value_meaning>UDP library v. 3.04</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>305</value>
+				<value_meaning>UDP library v. 3.05</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>306</value>
+				<value_meaning>UDP library v. 3.06</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>307</value>
+				<value_meaning>UDP library v. 3.07</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>308</value>
+				<value_meaning>UDP library v. 3.08</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>309</value>
+				<value_meaning>UDP library v. 3.09</value_meaning>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>telemetry_source_name</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.telemetry_source_name</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>The telemetry_source_name attribute identifies the Electrical Ground Supporting Equipment (EGSE) used to produce the data file.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>twist_angle</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.twist_angle</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>The twist_angle attribute provides the angle of rotation about the optical axis relative to celestial coordinates. Together with right ascension and declination, it defines the pointing direction and orientation of an image or scan platform.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>0.000</minimum_value>
+			<maximum_value>360.000</maximum_value>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
 
 	<!-- Framing Camera (FC) attributes -->
 	<DD_Attribute>
@@ -1101,60 +1216,6 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
-		<name>telemetry_format_id</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.telemetry_format_id</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>C. Juarez</submitter_name>
-		<definition>Provides the version of the UDP library which is 
-			loaded into the instrument’s NVRAM.
-			302 = UDP library v. 3.02
-			303 = UDP library v. 3.03
-			304 = UDP library v. 3.04
-			305 = UDP library v. 3.05
-			Example values: “302”, "303", “304”, “305”</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>true</enumeration_flag>
-			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-			<DD_Permissible_Value>
-				<value>301</value>
-				<value_meaning>UDP library v. 3.01</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>302</value>
-				<value_meaning>UDP library v. 3.02</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>303</value>
-				<value_meaning>UDP library v. 3.03</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>304</value>
-				<value_meaning>UDP library v. 3.04</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>305</value>
-				<value_meaning>UDP library v. 3.05</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>306</value>
-				<value_meaning>UDP library v. 3.06</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>307</value>
-				<value_meaning>UDP library v. 3.07</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>308</value>
-				<value_meaning>UDP library v. 3.08</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>309</value>
-				<value_meaning>UDP library v. 3.09</value_meaning>
-			</DD_Permissible_Value>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
 		<name>test_lamp</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.test_lamp</local_identifier>
@@ -1869,34 +1930,6 @@
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Date_Time_YMD</value_data_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>local_hour_angle</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.local_hour_angle</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The local_hour_angle attribute indicates the local hour at the center of the 
-			image or spectra.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>north_azimuth</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.north_azimuth</local_identifier>
-		<nillable_flag>true</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The north_azimuth attribute indicates the north azimuth angle evaluated at 
-			the center of the image or spectra.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
@@ -2979,6 +3012,85 @@
 		</DD_Association>
 	  </DD_Class>
 
+	<DD_Class>
+		<name>Dawn_Telemetry</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.Dawn_Telemetry</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The Dawn_Telemetry class contains telemetry-related 
+			metadata used by Dawn instrument data products.
+		</definition>
+		<element_flag>false</element_flag>
+		<DD_Association>
+			<identifier_reference>dawn.telemetry_format_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.telemetry_source_name</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>Dawn_Object_Orientation</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.Dawn_Object_Orientation</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The Dawn_Object_Orientation class contains Dawn-specific 
+			attributes that describe the pointing orientation of an image, 
+			spectrum, or scan platform relative to celestial coordinates.
+		</definition>
+		<element_flag>false</element_flag>
+		<DD_Association>
+			<identifier_reference>dawn.twist_angle</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>Dawn_Image_Parameters</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.Dawn_Image_Parameters</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The Dawn_Image_Parameters class contains Dawn image geometry 
+			parameters used in Dawn PDS3 labels.
+		</definition>
+		<element_flag>false</element_flag>
+		<DD_Association>
+			<identifier_reference>dawn.north_azimuth</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>Dawn_Orbit_Geometry</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.Dawn_Orbit_Geometry</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The Dawn_Orbit_Geometry class contains Dawn-specific geometry 
+			attributes describing the spacecraft, target, and solar viewing 
+			geometry for an observation.
+		</definition>
+		<element_flag>false</element_flag>
+		<DD_Association>
+			<identifier_reference>dawn.local_hour_angle</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
 
 	<DD_Class>
 		<name>Dawn</name>
@@ -3012,6 +3124,34 @@
 		<DD_Association>
 			<identifier_reference>dawn.standard_data_product_id</identifier_reference>
 			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>dawn.Dawn_Telemetry</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>dawn.Dawn_Object_Orientation</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>dawn.Dawn_Image_Parameters</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>dawn.Dawn_Orbit_Geometry</identifier_reference>
+			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
