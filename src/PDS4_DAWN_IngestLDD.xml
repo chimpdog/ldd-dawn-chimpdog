@@ -1009,6 +1009,23 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
+		<name>observation_id</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.observation_id</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			Uniquely identifies a scientific observation within a 
+			data set. Mostly important for multi-instrument 
+			observation campaigns. The OBSERVATION_ID 
+			comes from DSC.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
 		<name>operator</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.operator</local_identifier>
@@ -2315,7 +2332,26 @@
 	  </DD_Class>
 		
 	
-	<!-- Framing Camera (FC) Class -->
+	<!-- Framing Camera (FC) Classes -->
+	<DD_Class>
+		<name>FC_Instrument_Description</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.FC_Instrument_Description</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The FC_Instrument_Description class contains attributes describing 
+			aspects of the FC instrument.
+		</definition>
+		<DD_Association>
+			<identifier_reference>dawn.observation_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	
+	<!-- Framing Camera (FC) Main Class-->
 	<DD_Class>
 		<name>FC</name>
 		<version_id>1.0</version_id>
