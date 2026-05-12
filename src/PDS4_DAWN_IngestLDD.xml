@@ -1246,6 +1246,60 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
+		<name>reticle_point_declination</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.reticle_point_declination</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			This refers to the declination of the principle points 
+			of the camera. It contains five values, one for the 
+			cameras boresight vector and four for the corners 
+			of the FOV.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>reticle_point_latitude</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.reticle_point_latitude</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			This element provides the latitude of the surface intercept 
+			points of the principle points of the camera. It contains 
+			five values, one for the cameras boresight vector and four 
+			for the corners of the FOV.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>reticle_point_longitude</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.reticle_point_longitude</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			This provides the longitude of the surface intercept points 
+			of the principle points of the camera. It contains five 
+			values, one for the cameras boresight vector and four for 
+			the corners of the FOV.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
 		<name>reticle_point_ra</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.reticle_point_ra</local_identifier>
@@ -2486,6 +2540,24 @@
 			parameters.
 		</definition>
 		<element_flag>false</element_flag>
+		<DD_Association>
+			<identifier_reference>dawn.reticle_point_declination</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>5</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.reticle_point_latitude</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>5</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.reticle_point_longitude</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>5</maximum_occurrences>
+		</DD_Association>
 		<DD_Association>
 			<identifier_reference>dawn.reticle_point_ra</identifier_reference>
 			<reference_type>attribute_of</reference_type>
