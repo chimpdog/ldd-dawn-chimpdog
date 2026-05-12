@@ -1246,6 +1246,24 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
+		<name>reticle_point_ra</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.reticle_point_ra</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			This refers to the right ascension of the
+			principle points of the camera. It contains
+			five values, one for the cameras boresight
+			vector and four for the corners of the FOV.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
 		<name>subject</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.subject</local_identifier>
@@ -2455,6 +2473,24 @@
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>FC_Image_Parameters</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.FC_Image_Parameters</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The FC_Image_Parameters class contains Framing Camera image geometry
+			parameters.
+		</definition>
+		<element_flag>false</element_flag>
+		<DD_Association>
+			<identifier_reference>dawn.reticle_point_ra</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>5</maximum_occurrences>
 		</DD_Association>
 	</DD_Class>
 	
