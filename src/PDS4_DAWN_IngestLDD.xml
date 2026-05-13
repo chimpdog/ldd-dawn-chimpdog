@@ -2270,6 +2270,89 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
+		<name>vir_instrument_mode</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.vir_instrument_mode</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The value of this keyword identifies the instrument mode
+			and describes the different values.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+			<DD_Permissible_Value>
+				<value>S_H_SPE_H_SPA_F</value>
+				<value_meaning>Science, high spectral high spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_H_SPE_L_SPA_F</value>
+				<value_meaning>Science, high spectral low spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_H_SPE_L_SPA_F_SUM</value>
+				<value_meaning>Science, high spectral low spatial, Summing</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_L_SPE_H_SPA_F</value>
+				<value_meaning>Low spectral high spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_L_SPE_L_SPA_F</value>
+				<value_meaning>Science, Low spectral low spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_L_SPE_L_SPA_F_SUM</value>
+				<value_meaning>Science, Low spectral low spatial, Summing</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_H_SPE_H_SPA_Q</value>
+				<value_meaning>Science, high spectral high spatial, Quarter slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_L_SPE_H_SPA_Q</value>
+				<value_meaning>Science, low spectral high spatial, Quarter slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_H_SPE_L_SPA_F_MEA</value>
+				<value_meaning>Science, high spectral low spatial, Meaning</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_L_SPE_L_SPA_F_MEA</value>
+				<value_meaning>Science, low spectral low spatial, Meaning</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>C_H_SPE_H_SPA_F</value>
+				<value_meaning>Calibration, high spectral high spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>C_H_SPE_L_SPA_F:</value>
+				<value_meaning>Calibration, high spectral low spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>SPARE</value>
+				<value_meaning>CALIBRATION Spare</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>C_L_SPE_H_SPA_F:</value>
+				<value_meaning>Calibration, low spectral high spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>C_L_SPE_L_SPA_F</value>
+				<value_meaning>Calibration, low spectral low spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>C_H_SPE_H_SPA_Q</value>
+				<value_meaning>Calibration, high spectral high spatial, Quarter slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>C_L_SPE_H_SPA_Q</value>
+				<value_meaning>Calibration, low spectral high spatial, Quarter slit</value_meaning>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
 		<name>vir_ir_start_x_position</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.vir_ir_start_x_position</local_identifier>
@@ -3071,6 +3154,12 @@
 			<reference_type>component_of</reference_type>
 			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>*</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.VIR_Instrument_Mode</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 	</DD_Class>
 	<DD_Class>
