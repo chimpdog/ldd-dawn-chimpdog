@@ -2692,6 +2692,54 @@
 		</DD_Association>
 	</DD_Class>
 	
+	<DD_Class>
+		<name>FC_System_Hardware_Software_Configuration</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.FC_System_Hardware_Software_Configuration</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The FC_System_Hardware_Software_Configuration class contains
+			attributes describing the Framing Camera hardware identifiers			
+			and onboard software versions used during image acquisition.
+		</definition>
+		<DD_Association>
+			<identifier_reference>dawn.dpu_hardware_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.dpu_software_version</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.fee_hardware_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.mcu_hardware_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.pcu_hardware_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.udplib_software_version</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
 	
 	<!-- Framing Camera (FC) Main Class-->
 	<DD_Class>
@@ -2747,25 +2795,7 @@
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.dpu_hardware_id</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.dpu_software_version</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
 			<identifier_reference>dawn.fee_flag</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.fee_hardware_id</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -2879,12 +2909,6 @@
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.mcu_hardware_id</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
 			<identifier_reference>dawn.mcu_motor_flag</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
@@ -2892,12 +2916,6 @@
 		</DD_Association>
 		<DD_Association>
 			<identifier_reference>dawn.operator</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.pcu_hardware_id</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -2988,12 +3006,6 @@
 		</DD_Association>
 		<DD_Association>
 			<identifier_reference>dawn.t_structure</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.udplib_software_version</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
