@@ -98,6 +98,8 @@ jobs:
         if: ${{ always() }}
 
   upload_logs_only: # job 3
+    permissions:
+        contents: write 
     name: 'Add Run Logs to Github'
     runs-on: ubuntu-latest
     needs: build
